@@ -1,0 +1,35 @@
+Circuit: *** SPICE deck for cell AOI22{sch} from library project
+
+Error on line 9 : mnmos@0 net@16 b gnd gnd nmos l=0.8u w=1.6u
+	 Unable to find definition of model "w"
+	
+	* Error:  No unlabeled parameter permitted for MOSFET's
+Error on line 10 : mnmos@1 out a net@16 gnd nmos l=0.8u w=1.6u
+	 Unable to find definition of model "w"
+	
+	* Error:  No unlabeled parameter permitted for MOSFET's
+Error on line 11 : mnmos@2 gnd d net@19 gnd nmos l=0.8u w=1.6u
+	 Unable to find definition of model "w"
+	
+	* Error:  No unlabeled parameter permitted for MOSFET's
+Error on line 12 : mnmos@3 net@19 c out gnd nmos l=0.8u w=1.6u
+	 Unable to find definition of model "w"
+	
+	* Error:  No unlabeled parameter permitted for MOSFET's
+Error on line 13 : mpmos@0 net@105 d out vdd pmos l=0.4u w=11.2u
+	 Unable to find definition of model "w"
+	
+	* Error:  No unlabeled parameter permitted for MOSFET's
+Error on line 14 : mpmos@1 out c net@105 vdd pmos l=0.4u w=11.2u
+	 Unable to find definition of model "w"
+	
+	* Error:  No unlabeled parameter permitted for MOSFET's
+Error on line 15 : mpmos@2 vdd a net@105 vdd pmos l=0.4u w=11.2u
+	 Unable to find definition of model "w"
+	
+	* Error:  No unlabeled parameter permitted for MOSFET's
+Error on line 16 : mpmos@3 net@105 b vdd vdd pmos l=0.4u w=11.2u
+	 Unable to find definition of model "w"
+	
+	* Error:  No unlabeled parameter permitted for MOSFET's
+Fatal Error: No analysis request found.

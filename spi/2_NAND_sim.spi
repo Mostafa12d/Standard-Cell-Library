@@ -1,0 +1,46 @@
+*** SPICE deck for cell 2_NAND_sim{sch} from library project
+*** Created on Mon Apr 11, 2022 13:33:50
+*** Last revised on Tue Apr 12, 2022 03:31:51
+*** Written on Tue Apr 12, 2022 03:31:58 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT project__2_NAND FROM CELL 2_NAND{sch}
+.SUBCKT project__2_NAND A B C gnd OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 net@7 C gnd gnd nmos-BSIM130 L=0.4U W=4.8U
+Mnmos@2 net@8 B net@7 gnd nmos-BSIM130 L=0.4U W=4.8U
+Mnmos@3 OUT A net@8 gnd nmos-BSIM130 L=0.4U W=4.8U
+Mpmos@1 vdd C OUT vdd pmos L=0.4U W=11.2U
+Mpmos@2 vdd B OUT vdd pmos L=0.4U W=11.2U
+Mpmos@3 vdd A OUT vdd pmos L=0.4U W=11.2U
+.ENDS project__2_NAND
+
+*** SUBCIRCUIT project__4_NOT FROM CELL 4_NOT{sch}
+.SUBCKT project__4_NOT gnd IN OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 OUT IN gnd gnd nmos-BSIM130 L=0.4U W=3.2U
+Mpmos@0 vdd IN OUT vdd pmos L=0.4U W=22.4U
+.ENDS project__4_NOT
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: 2_NAND_sim{sch}
+X_2_NAND@0 a b c gnd out vdd project__2_NAND
+X_4_NOT@0 gnd out _4_NOT@0_OUT vdd project__4_NOT
+
+* Spice Code nodes in cell cell '2_NAND_sim{sch}'
+Vdd VDD 0 DC 1.8
+Vgnd GND 0 DC 0
+Va a 0 DC 1.8
+Vb b 0 DC 1.8
+Vc c 0 PULSE 1.8 0 0.1n 400p 400p 5n 10n
+.tran 0 100n
+.measure tran tf trig v(out) val=1.62 fall=1 TARG v(out) val=0.18 fall=1
+.measure tpdr v(c) val=0.9 fall=1 TARG v(out) val=0.9 rise=1
+.measure tpdf v(c) val=0.9 rise=1 TARG v(out) val=0.9 fall=1
+.measure trise trig v(out) val=0.18 rise=1 TARG v(out) val=1.62 rise=1
+.include "D:\University\Spring 2022\DD2\Project\BSIMTransistorModel.txt"
+.END

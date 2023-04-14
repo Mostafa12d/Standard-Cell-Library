@@ -1,0 +1,31 @@
+Circuit: *** SPICE deck for cell cell6_sim{sch} from library project
+
+Vgnd: both pins shorted together -- ignoring.
+Limiting rise time of source va to 5e-010
+Limiting fall time of source va to 5e-010
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Direct Newton iteration for .op point succeeded.
+
+tf=4.37351e-010 FROM 5.95484e-009 TO 6.39219e-009
+tpdr=6.39613e-010 FROM 0 TO 6.39613e-010
+tpdf=6.14334e-009 FROM 0 TO 6.14334e-009
+trise=4.10968e-010 FROM 4.82287e-010 TO 8.93256e-010
+
+
+Date: Tue Apr 12 13:48:25 2022
+Total elapsed time: 0.357 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 4992
+traniter = 4970
+tranpoints = 1940
+accept = 1647
+rejected = 293
+matrix size = 71
+fillins = 0
+solver = Normal
+Matrix Compiler1: 8.86 KB object code size  3.9/2.3/[1.0]
+Matrix Compiler2: 8.94 KB object code size  1.9/2.5/[0.9]
+

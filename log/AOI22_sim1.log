@@ -1,0 +1,39 @@
+Circuit: *** SPICE deck for cell AOI22_sim{sch} from library project
+
+Vgnd: both pins shorted together -- ignoring.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 1.00002e-010 to 6.8594e-010
+Heightened Def Con from 1.01e-008 to 1.06859e-008
+Heightened Def Con from 2.01e-008 to 2.06859e-008
+Heightened Def Con from 3.01e-008 to 3.06859e-008
+Heightened Def Con from 4.01e-008 to 4.06859e-008
+Heightened Def Con from 5.01e-008 to 5.06859e-008
+Heightened Def Con from 6.01e-008 to 6.06859e-008
+Heightened Def Con from 7.01e-008 to 7.06859e-008
+Heightened Def Con from 8.01e-008 to 8.06859e-008
+Heightened Def Con from 9.01e-008 to 9.06859e-008
+
+tf=3.84605e-010 FROM 5.24309e-009 TO 5.6277e-009
+tpdr=2.86525e-010 FROM 0 TO 2.86525e-010
+tpdf=5.33022e-009 FROM 0 TO 5.33022e-009
+trise=4.27509e-010 FROM 1.51545e-010 TO 5.79053e-010
+
+
+Date: Sun Apr 10 15:43:47 2022
+Total elapsed time: 0.497 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 7034
+traniter = 7020
+tranpoints = 2262
+accept = 2028
+rejected = 244
+matrix size = 46
+fillins = 0
+solver = Normal
+Matrix Compiler1: 4.92 KB object code size  3.6/1.5/[0.7]
+Matrix Compiler2: off  [1.1]/1.9/2.5
+

@@ -1,0 +1,46 @@
+*** SPICE deck for cell NOR_sim{sch} from library project
+*** Created on Wed Apr 06, 2022 17:17:36
+*** Last revised on Tue Apr 12, 2022 03:44:22
+*** Written on Tue Apr 12, 2022 03:44:26 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT project__4_NOT FROM CELL 4_NOT{sch}
+.SUBCKT project__4_NOT gnd IN OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 OUT IN gnd gnd nmos-BSIM130 L=0.4U W=3.2U
+Mpmos@0 vdd IN OUT vdd pmos L=0.4U W=22.4U
+.ENDS project__4_NOT
+
+*** SUBCIRCUIT project__NOR FROM CELL NOR{sch}
+.SUBCKT project__NOR A B C gnd OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 OUT C gnd gnd nmos-BSIM130 L=0.4U W=0.8U
+Mnmos@1 OUT B gnd gnd nmos-BSIM130 L=0.4U W=0.8U
+Mnmos@2 OUT A gnd gnd nmos-BSIM130 L=0.4U W=0.8U
+Mpmos@3 vdd A net@67 vdd pmos L=0.4U W=16.8U
+Mpmos@5 net@65 C OUT vdd pmos L=0.4U W=16.8U
+Mpmos@7 net@67 B net@65 vdd pmos L=0.4U W=16.8U
+.ENDS project__NOR
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NOR_sim{sch}
+X_4_NOT@0 gnd out _4_NOT@0_OUT vdd project__4_NOT
+XNOR@3 a b c gnd out vdd project__NOR
+
+* Spice Code nodes in cell cell 'NOR_sim{sch}'
+Vdd VDD 0 DC 1.8
+Vgnd GND 0 DC 0
+Va a 0 DC 0
+Vb b 0 DC 0
+Vc c 0 PULSE 1.8 0 0.1n 400p 400p 5n 10n
+.trans 0 100n
+.measure tran tf trig v(out) val=1.62 fall=1 TARG v(out) val=0.18 fall=1
+.measure tpdr v(c) val=0.9 fall=1 TARG v(out) val=0.9 rise=1
+.measure tpdf v(c) val=0.9 rise=1 TARG v(out) val=0.9 fall=1
+.measure trise trig v(out) val=0.18 rise=1 TARG v(out) val=1.62 rise=1
+.include "D:\University\Spring 2022\DD2\Project\BSIMTransistorModel.txt"
+.END

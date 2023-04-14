@@ -1,0 +1,29 @@
+Circuit: *** SPICE deck for cell NOT_sim{sch} from library project
+
+Vgnd: both pins shorted together -- ignoring.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Direct Newton iteration for .op point succeeded.
+
+tf=6.38626e-010 FROM 5.33351e-009 TO 5.97214e-009
+tpdr=4.12814e-010 FROM 0 TO 4.12814e-010
+tpdf=5.51821e-009 FROM 0 TO 5.51821e-009
+trise=4.63095e-010 FROM 2.21721e-010 TO 6.84816e-010
+
+
+Date: Tue Apr 12 16:45:04 2022
+Total elapsed time: 0.338 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 4935
+traniter = 4906
+tranpoints = 1998
+accept = 1713
+rejected = 285
+matrix size = 22
+fillins = 0
+solver = Normal
+Matrix Compiler1: 2.23 KB object code size  1.1/0.8/[0.4]
+Matrix Compiler2: off  [0.6]/0.9/1.2
+
